@@ -65,11 +65,18 @@ export const brain = {
   },
 };
 
+declare global {
+  interface Window {
+    brain: typeof brain;
+  }
+}
+
 if (typeof window !== 'undefined') {
-  // @ts-expect-error window.brain
   window.brain = brain;
 }
 
 if (typeof module !== 'undefined') {
   module.exports = brain;
 }
+
+export default brain;

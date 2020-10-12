@@ -22,6 +22,5 @@
     "**/*.json",
     "**/*.d.ts",
     "dist",
-    "examples/javascript"
   ]
 }
