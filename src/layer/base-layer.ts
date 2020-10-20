@@ -45,6 +45,7 @@ export interface ILayer {
 }
 
 export interface ILayerSettings {
+  name?: string | null;
   width?: number | null;
   height?: number | null;
   depth?: number | null;

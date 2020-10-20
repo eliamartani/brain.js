@@ -1,5 +1,5 @@
-const { NeuralNetwork } = require('../src/neural-network');
-const NeuralNetworkGPU = require('../src/neural-network-gpu');
+import { NeuralNetwork } from '../src/neural-network';
+import NeuralNetworkGPU from '../src/neural-network-gpu';
 
 describe('NeuralNetworkGPU', () => {
   const xorTrainingData = [

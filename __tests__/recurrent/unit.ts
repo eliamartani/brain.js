@@ -1,13 +1,16 @@
+import { GPU } from 'gpu.js';
 import { ILayer } from '../../src/layer/base-layer';
 import { RecurrentInput } from '../../src/layer/recurrent-input';
 import { Matrix } from '../../src/recurrent/matrix';
-
-const { GPU } = require('gpu.js');
+// import { brain } from '../../src';
+import { setup, teardown } from '../../src/utilities/kernel';
+import { Filter } from '../../src/layer/filter';
+import { injectIstanbulCoverage } from '../test-utils';
+// TODO Recurrent was updated but tests not. Error with typing issues
 const { Recurrent, layer } = require('../../src');
+
+// const { Recurrent, layer } = brain;
 const { add, input, multiply, output, random, rnnCell } = layer;
-const { setup, teardown } = require('../../src/utilities/kernel');
-const { Filter } = require('../../src/layer/types');
-const { injectIstanbulCoverage } = require('../test-utils');
 
 function copy2D(matrix: Partial<Matrix> & any[][]) {
   return matrix.map((row) => Float32Array.from(row));
@@ -201,10 +204,8 @@ describe('Recurrent Class: Unit', () => {
     test('steps back through values correctly', () => {
       class SuperLayer extends Filter {
         constructor(inputLayer: ILayer) {
-          super();
+          super(inputLayer);
           this.inputLayer = inputLayer;
-          this.width = 1;
-          this.height = 1;
         }
 
         setupKernels() {}
@@ -213,9 +214,7 @@ describe('Recurrent Class: Unit', () => {
 
         predict() {}
 
-        compare() {
-          this.errors = [[5]];
-        }
+        compare() {}
 
         learn() {}
       }

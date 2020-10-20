@@ -1,4 +1,4 @@
-const { NeuralNetwork } = require('../../src/neural-network');
+import { NeuralNetwork } from '../../src/neural-network';
 
 const data = [
   { input: [0, 0], output: [0] },

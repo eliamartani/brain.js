@@ -1,22 +1,22 @@
-const Matrix = require('./matrix');
-const RandomMatrix = require('./matrix/random-matrix');
-const Equation = require('./matrix/equation');
-const RNN = require('./rnn');
-const { zeros } = require('../utilities/zeros');
-const softmax = require('./matrix/softmax');
-const { randomFloat } = require('../utilities/random');
-const sampleI = require('./matrix/sample-i');
-const maxI = require('./matrix/max-i');
-const { lookup } = require('../lookup');
-const LookupTable = require('../utilities/lookup-table');
-const ArrayLookupTable = require('../utilities/array-lookup-table');
-const {
+import { Matrix } from './matrix';
+import { RandomMatrix } from './matrix/random-matrix';
+import { Equation } from './matrix/equation';
+import RNN from './rnn';
+import { zeros } from '../utilities/zeros';
+import { softmax } from './matrix/softmax';
+import { randomFloat } from '../utilities/random';
+import { sampleI } from './matrix/sample-i';
+import { maxI } from './matrix/max-i';
+import { lookup } from '../lookup';
+import { LookupTable } from '../utilities/lookup-table';
+import { ArrayLookupTable } from '../utilities/array-lookup-table';
+import {
   arraysToFloat32Arrays,
   arrayToFloat32Arrays,
   objectsToFloat32Arrays,
   objectToFloat32Arrays,
   objectToFloat32Array,
-} = require('../utilities/cast');
+} from '../utilities/cast';
 
 class RNNTimeStep extends RNN {
   // eslint-disable-next-line
@@ -1283,4 +1283,4 @@ RNNTimeStep.defaults = {
 
 RNNTimeStep.trainDefaults = RNN.trainDefaults;
 
-module.exports = RNNTimeStep;
+export default RNNTimeStep;

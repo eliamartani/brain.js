@@ -1,13 +1,12 @@
-const { GPU } = require('gpu.js');
-const { gpuMock } = require('gpu-mock.js');
-const {
+import { GPU } from 'gpu.js';
+import { gpuMock } from 'gpu-mock.js';
+import {
   ArthurDeviationBiases,
   arthurDeviationBiases,
   update,
-} = require('../../../src/praxis/arthur-deviation-biases');
-const { shave } = require('../../test-utils');
-const { setup, teardown } = require('../../../src/utilities/kernel');
-const { injectIstanbulCoverage } = require('../../test-utils');
+} from '../../../src/praxis/arthur-deviation-biases';
+import { shave, injectIstanbulCoverage } from '../../test-utils';
+import { setup, teardown } from '../../../src/utilities/kernel';
 
 describe('ArthurDeviationBiases Class: Unit', () => {
   beforeEach(() => {

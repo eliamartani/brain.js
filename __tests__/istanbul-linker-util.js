@@ -1,5 +1,5 @@
-const { parse } = require('acorn');
-const { getFileCoverageDataByName } = require('istanbul-spy');
+import { parse } from 'acorn';
+import { getFileCoverageDataByName } from 'istanbul-spy';
 
 // Istanbul.js, why did you make me do this, I trusted you...
 // This would have probably been a whole lot easier with regex, maybe, but probably not as clear.
@@ -136,7 +136,12 @@ class Recurse {
   }
 }
 
-module.exports = function (fn) {
+/**
+ *
+ * @param {Function} fn
+ * @returns string
+ */
+function istanbulLinkerUtil(fn) {
   const source = fn.toString();
   const links = new Set();
   const ast = parse(`function fakeFunction() {${source}}`, {
@@ -155,4 +160,6 @@ module.exports = function (fn) {
   });
   recurse.into(ast);
   return Array.from(links).join('') + source;
-};
+}
+
+export default istanbulLinkerUtil;

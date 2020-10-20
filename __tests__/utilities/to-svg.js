@@ -1,11 +1,11 @@
-const { NeuralNetwork } = require('../../src/neural-network');
-const RNN = require('../../src/recurrent/rnn');
-const RNNTimeStep = require('../../src/recurrent/rnn-time-step');
-const toSVG = require('../../src/utilities/to-svg');
-const { FeedForward } = require('../../src/feed-forward');
-const { Recurrent } = require('../../src/recurrent');
-const parser = require('fast-xml-parser');
-const { input, feedForward, target } = require('../../src/layer');
+import parser from 'fast-xml-parser';
+import { NeuralNetwork } from '../../src/neural-network';
+import RNN from '../../src/recurrent/rnn';
+import RNNTimeStep from '../../src/recurrent/rnn-time-step';
+import toSVG from '../../src/utilities/to-svg';
+import { FeedForward } from '../../src/feed-forward';
+import { Recurrent } from '../../src/recurrent';
+import { input, feedForward, target } from '../../src/layer';
 
 describe('svg', () => {
   const options = {

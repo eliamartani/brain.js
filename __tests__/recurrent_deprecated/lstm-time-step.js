@@ -1,5 +1,5 @@
-const RNNTimeStep = require('../../src/recurrent/rnn-time-step');
-const { LSTMTimeStep } = require('../../src/recurrent/lstm-time-step');
+import RNNTimeStep from '../../src/recurrent/rnn-time-step';
+import { LSTMTimeStep } from '../../src/recurrent/lstm-time-step';
 
 describe('LSTMTimeStep', () => {
   describe('getModel', () => {

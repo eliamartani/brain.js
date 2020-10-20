@@ -1,7 +1,12 @@
-const layer = require('../layer');
+import * as layer from '../layer';
 
-module.exports = function layerFromJSON(jsonLayer) {
-  if (!layer.hasOwnProperty(jsonLayer.type)) return null;
+/**
+ *
+ * @param {ILayerJSON} jsonLayer
+ * @returns {ILayer}
+ */
+function layerFromJSON(jsonLayer) {
+  if (!layer[jsonLayer.type]) return null;
   const Layer = layer[jsonLayer.type];
 
   // eslint-disable-next-line
@@ -14,4 +19,6 @@ module.exports = function layerFromJSON(jsonLayer) {
   });
 
   return realLayer;
-};
+}
+
+export default layerFromJSON;

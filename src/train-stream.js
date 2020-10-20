@@ -1,4 +1,4 @@
-const { Writable } = require('stream');
+import { Writable } from 'stream';
 
 /**
  *
@@ -133,4 +133,4 @@ class TrainStream extends Writable {
   }
 }
 
-module.exports = TrainStream;
+export default TrainStream;

@@ -18,7 +18,6 @@ export interface LSTMModel {
   cellActivationBias: Matrix;
 }
 
-// @ts-expect-error rnn is js
 export class LSTM extends RNN {
   static getModel(hiddenSize: number, prevSize: number): LSTMModel {
     return {

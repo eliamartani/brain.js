@@ -1,7 +1,7 @@
-const {
+import {
   DataFormatter,
   defaultRNNFormatter,
-} = require('../../src/utilities/data-formatter');
+} from '../../src/utilities/data-formatter';
 
 describe('DataFormatter', () => {
   test('does not have zeros', () => {

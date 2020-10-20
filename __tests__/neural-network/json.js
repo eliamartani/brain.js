@@ -1,4 +1,4 @@
-const { NeuralNetwork } = require('../../src/neural-network');
+import { NeuralNetwork } from '../../src/neural-network';
 
 function typedArrayToObject(value) {
   return JSON.parse(JSON.stringify(value));
@@ -57,13 +57,13 @@ describe('JSON', () => {
         net.verifyIsInitialized([{ input: [1, 2], output: [1, 2, 3] }]);
         const json = net.toJSON();
         expect(Object.keys(json.layers[1]).length).toBe(net.weights[1].length);
-        expect(json.layers[1][0].weights).toEqual(
+        expect(json.layers[1][0].weights).toMatchObject(
           typedArrayToObject(net.weights[1][0])
         );
-        expect(json.layers[1][1].weights).toEqual(
+        expect(json.layers[1][1].weights).toMatchObject(
           typedArrayToObject(net.weights[1][1])
         );
-        expect(json.layers[1][2].weights).toEqual(
+        expect(json.layers[1][2].weights).toMatchObject(
           typedArrayToObject(net.weights[1][2])
         );
       });
@@ -352,9 +352,9 @@ describe('JSON', () => {
         const json = net.toJSON();
         const newNet = new NeuralNetwork().fromJSON(json);
         expect(newNet.weights[1].length).toBe(net.weights[1].length);
-        expect(newNet.weights[1][0]).toEqual(net.weights[1][0]);
-        expect(newNet.weights[1][1]).toEqual(net.weights[1][1]);
-        expect(newNet.weights[1][2]).toEqual(net.weights[1][2]);
+        expect(newNet.weights[1][0]).toMatchObject(net.weights[1][0]);
+        expect(newNet.weights[1][1]).toMatchObject(net.weights[1][1]);
+        expect(newNet.weights[1][2]).toMatchObject(net.weights[1][2]);
       });
     });
 
@@ -375,9 +375,9 @@ describe('JSON', () => {
         const json = net.toJSON();
         const newNet = new NeuralNetwork().fromJSON(json);
         expect(newNet.weights[2].length).toBe(net.weights[2].length);
-        expect(newNet.weights[2][0]).toEqual(net.weights[2][0]);
-        expect(newNet.weights[2][1]).toEqual(net.weights[2][1]);
-        expect(newNet.weights[2][2]).toEqual(net.weights[2][2]);
+        expect(newNet.weights[2][0]).toMatchObject(net.weights[2][0]);
+        expect(newNet.weights[2][1]).toMatchObject(net.weights[2][1]);
+        expect(newNet.weights[2][2]).toMatchObject(net.weights[2][2]);
       });
     });
 
