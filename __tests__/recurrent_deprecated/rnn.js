@@ -1,7 +1,7 @@
-const RNN = require('../../src/recurrent/rnn');
-const { DataFormatter } = require('../../src/utilities/data-formatter');
-const { allMatrices } = require('../test-utils');
-const istanbulLinkerUtil = require('../istanbul-linker-util');
+import RNN from '../../src/recurrent/rnn';
+import { DataFormatter } from '../../src/utilities/data-formatter';
+import { allMatrices } from '../test-utils';
+import istanbulLinkerUtil from '../istanbul-linker-util';
 
 function notZero(v) {
   return v !== 0;

@@ -1,7 +1,7 @@
-const { LSTM } = require('../../src/recurrent/lstm');
-const RNN = require('../../src/recurrent/rnn');
-const { DataFormatter } = require('../../src/utilities/data-formatter');
-const istanbulLinkerUtil = require('../istanbul-linker-util');
+import { LSTM } from '../../src/recurrent/lstm';
+import RNN from '../../src/recurrent/rnn';
+import { DataFormatter } from '../../src/utilities/data-formatter';
+import istanbulLinkerUtil from '../istanbul-linker-util';
 
 describe('lstm', () => {
   describe('getModel', () => {
