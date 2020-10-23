@@ -1,5 +1,5 @@
-const { NeuralNetwork } = require('../../src/neural-network');
-const istanbulLinkerUtil = require('../istanbul-linker-util');
+import { NeuralNetwork } from '../../src/neural-network';
+import istanbulLinkerUtil from '../istanbul-linker-util';
 
 describe('.toFunction()', () => {
   describe('sigmoid activation', () => {
