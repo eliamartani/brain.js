@@ -197,4 +197,4 @@ class CrossValidate {
   }
 }
 
-module.exports = CrossValidate;
+export default CrossValidate;

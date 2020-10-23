@@ -1,13 +1,13 @@
-const { RecurrentConnection } = require('./layer/recurrent-connection');
-const { RecurrentInput } = require('./layer/recurrent-input');
-const { RecurrentZeros } = require('./layer/recurrent-zeros');
-const { Model, InternalModel } = require('./layer/types');
+import { RecurrentConnection } from './layer/recurrent-connection';
+import { RecurrentInput } from './layer/recurrent-input';
+import { RecurrentZeros } from './layer/recurrent-zeros';
+import { Model, InternalModel } from './layer/types';
 // const { Target } = require('./layer/target');
-const flattenLayers = require('./utilities/flatten-layers');
-const { FeedForward } = require('./feed-forward');
-const { release, clone } = require('./utilities/kernel');
+import flattenLayers from './utilities/flatten-layers';
+import { FeedForward } from './feed-forward';
+import { release, clone } from './utilities/kernel';
 
-class Recurrent extends FeedForward {
+export class Recurrent extends FeedForward {
   static get structure() {
     return {
       /**
@@ -329,7 +329,3 @@ class Recurrent extends FeedForward {
     return null;
   }
 }
-
-module.exports = {
-  Recurrent,
-};
