@@ -1,4 +1,4 @@
-import { GPU } from 'gpu.js';
+import { GPU, KernelOutput } from 'gpu.js';
 import { gpuMock } from 'gpu-mock.js';
 import {
   ArthurDeviationBiases,
@@ -33,9 +33,9 @@ describe('ArthurDeviationBiases Class: Unit', () => {
           momentum: 0.2,
         },
       });
-      const result: Float32Array = kernel(weights, deltas);
+      const result: KernelOutput = kernel(weights, deltas);
       const value = new Float32Array([1.25, 2.20000005, 3.1500001]);
-      expect(shave(result)).toEqual(shave(value));
+      expect(shave(result as Float32Array)).toEqual(shave(value));
     });
   });
 

@@ -26,7 +26,6 @@ export function compare2D(
 }
 
 export class Target extends Filter {
-  errors: KernelOutput;
   constructor(settings: ILayerSettings, inputLayer: ILayer) {
     super(inputLayer, settings);
     this.validate();
@@ -69,7 +68,9 @@ export class Target extends Filter {
     // this is where weights attach to deltas
     // deltas will be zero on learn, so save it in error for comparing to mse later
     release(this.deltas);
-    release(this.errors);
+    if (this.errors) {
+      release(this.errors);
+    }
     release(this.inputLayer.deltas);
     this.deltas = (this.compareKernel as IKernelRunShortcut)(
       this.weights,

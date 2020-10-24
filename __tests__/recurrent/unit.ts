@@ -203,8 +203,7 @@ describe('Recurrent Class: Unit', () => {
     test('steps back through values correctly', () => {
       class SuperLayer extends Filter {
         constructor(inputLayer: ILayer) {
-          super();
-          this.inputLayer = inputLayer;
+          super(inputLayer);
           this.width = 1;
           this.height = 1;
         }

@@ -1,4 +1,4 @@
-import { GPU, IKernelRunShortcut } from 'gpu.js';
+import { GPU, IKernelRunShortcut, KernelOutput } from 'gpu.js';
 import { gpuMock } from 'gpu-mock.js';
 import {
   ArthurDeviationWeights,
@@ -37,7 +37,7 @@ describe('ArthurDeviationWeights Class: Unit', () => {
           momentum: 0.2,
         },
       });
-      const result: any = kernel(
+      const result: KernelOutput = kernel(
         changes,
         weights,
         incomingWeights,
@@ -49,7 +49,7 @@ describe('ArthurDeviationWeights Class: Unit', () => {
         3.4000001,
         5.0999999,
       ]);
-      expect(shave(result)).toEqual(shave(value));
+      expect(shave(result as Float32Array)).toEqual(shave(value));
     });
   });
   describe('updateChange()', () => {

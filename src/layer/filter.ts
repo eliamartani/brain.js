@@ -10,12 +10,22 @@ export interface IFilterSettings extends ILayerSettings {
 }
 
 export class Filter extends BaseLayer {
+  errors?: KernelOutput | null = null;
+
   get width(): number {
     return this.inputLayer.width;
   }
 
+  set width(value: number) {
+    this.inputLayer.width = value;
+  }
+
   get height(): number {
     return this.inputLayer.height;
+  }
+
+  set height(value: number) {
+    this.inputLayer.height = value;
   }
 
   get depth(): number {

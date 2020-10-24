@@ -211,7 +211,6 @@ export class SoftMax extends Filter {
   getExponentialsKernel: IKernelRunShortcut | null;
   getMaxValueKernel: IKernelRunShortcut | null;
   getSumKernel: IKernelRunShortcut | null;
-  errors: KernelOutput | null = null;
   constructor(inputLayer: ILayer, settings?: ILayerSettings) {
     super(inputLayer, settings);
     this.getExponentialsKernel = null;

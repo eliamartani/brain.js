@@ -147,7 +147,7 @@ class Recurse {
  * @param {Function} fn
  * @returns string
  */
-function istanbulLinkerUtil(fn) {
+function istanbulLinkerUtil(fn: Function) {
   const source = fn.toString();
   const links = new Set();
   const ast = parse(`function fakeFunction() {${source}}`, {

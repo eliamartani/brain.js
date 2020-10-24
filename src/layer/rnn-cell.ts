@@ -20,20 +20,20 @@ export function rnnCell(
 
   // wxh
   const weight = random({
-    name: 'weight',
+    title: 'weight',
     height,
     width: input.height,
     std: 0.08,
   });
   // whh
   const transition = random({
-    name: 'transition',
+    title: 'transition',
     height,
     width: height,
     std: 0.08,
   });
   // bhh
-  const bias = zeros({ name: 'bias', height });
+  const bias = zeros({ title: 'bias', height });
 
   return relu(
     add(
